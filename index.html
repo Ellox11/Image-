@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>OptiPixel - Fast & Free Image Compressor</title>
+    <meta name="description" content="Compress JPEG, PNG, and WEBP images in seconds. OptiPixel is a free, real-time image optimizer that reduces file size while maintaining quality. Fast, private, and easy to use.">
+    <meta name="keywords" content="image compressor, image optimizer, compress jpg, compress png, reduce image size, image shrinker, photo compressor">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.your-optipixel-domain.com/">
+    <meta property="og:title" content="OptiPixel - Fast & Free Image Compressor">
+    <meta property="og:description" content="Reduce image file sizes instantly without losing quality. Perfect for web developers, marketers, and content creators.">
+    <meta property="og:image" content="https://www.your-optipixel-domain.com/social-preview.jpg"> <!-- Create a 1200x630px preview image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.your-optipixel-domain.com/">
+    <meta property="twitter:title" content="OptiPixel - Fast & Free Image Compressor">
+    <meta property="twitter:description" content="Reduce image file sizes instantly without losing quality. Perfect for web developers, marketers, and content creators.">
+    <meta property="twitter:image" content="https://www.your-optipixel-domain.com/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- JSZip for creating .zip files in the browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><h1><i class="fas fa-rocket"></i> OptiPixel</h1></div>
+        <nav><a href="#why-compress">Why Compress?</a> <a href="#faq">FAQ</a></nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Shrink Your Images. Keep the Quality.</h1>
+            <p class="subtitle">A free, real-time image compressor that works in your browser. Fast & Private.</p>
+        </section>
+
+        <section class="compressor-app">
+            <div id="upload-area" class="upload-area">
+                <i class="fas fa-file-image"></i>
+                <h2>Drag & Drop Images Here</h2>
+                <p>or</p>
+                <button id="browse-btn" class="btn btn-primary">Browse Files</button>
+                <input type="file" id="file-input" multiple accept="image/jpeg, image/png, image/webp" hidden>
+                <span>Supports JPG, PNG, WEBP</span>
+            </div>
+
+            <div id="results-area" class="results-area hidden">
+                <div class="results-header">
+                    <h2>Compression Results</h2>
+                    <div>
+                        <button id="download-all-btn" class="btn btn-secondary hidden"><i class="fas fa-file-archive"></i> Download All (.zip)</button>
+                        <button id="clear-all-btn" class="btn btn-danger"><i class="fas fa-trash"></i> Clear All</button>
+                    </div>
+                </div>
+                <div id="results-list" class="results-list"></div>
+            </div>
+        </section>
+
+        <!-- AD SLOT: BANNER -->
+        <section class="ad-slot ad-banner">
+            <p>Advertisement</p>
+            <!-- Place your 728x90 (Desktop) or 320x100 (Mobile) AdSense code here -->
+        </section>
+
+        <!-- SEO Content Sections -->
+        <section id="why-compress" class="content-section">
+            <h2>Why Compress Your Images?</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> <strong>Faster Website Speed:</strong> Optimized images improve page load times, a key SEO factor.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Better User Experience:</strong> Nobody likes waiting for heavy images to load.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Save Storage & Bandwidth:</strong> Reduced file sizes save server space and user data.</li>
+            </ul>
+        </section>
+
+        <section id="faq" class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Is my data private?</h3>
+                <p><strong>Yes.</strong> All compression happens directly in your browser. Your images are never uploaded to our servers, ensuring 100% privacy.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is the maximum file size?</h3>
+                <p>There is no hard limit, but performance depends on your computer's processing power. For best results, use images under 15MB.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2023 OptiPixel. All rights reserved.</p>
+    </footer>
+
+    <!-- HTML Template for a single result item -->
+    <template id="result-item-template">
+        <div class="result-card">
+            <img class="thumbnail" src="" alt="Image thumbnail">
+            <div class="file-info">
+                <p class="filename">filename.jpg</p>
+                <div class="size-info">
+                    <span class="original-size">1.2 MB</span> <i class="fas fa-arrow-right"></i> <span class="compressed-size">250 KB</span>
+                </div>
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+            </div>
+            <div class="savings-info">
+                <p class="savings-percent">-85%</p>
+                <a href="#" class="btn btn-download" download="filename.jpg"><i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
